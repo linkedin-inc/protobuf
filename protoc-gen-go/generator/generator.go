@@ -1543,7 +1543,7 @@ func (g *Generator) generateMessage(message *Descriptor) {
 		usedNames[fieldName] = true
 		typename, wiretype := g.GoType(message, field)
 		jsonName := *field.Name
-		tag := fmt.Sprintf("protobuf:%s json:%q bson:%q", g.goTag(message, field, wiretype), jsonName+",omitempty", jsonName.lower()+",omitempty")
+		tag := fmt.Sprintf("protobuf:%s json:%q bson:%q", g.goTag(message, field, wiretype), jsonName+",omitempty", strings.ToLower(jsonName)+",omitempty")
 
 		if *field.Type == descriptor.FieldDescriptorProto_TYPE_MESSAGE {
 			desc := g.ObjectNamed(field.GetTypeName())
