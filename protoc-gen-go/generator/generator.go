@@ -1587,10 +1587,10 @@ func (g *Generator) generateMessage(message *Descriptor) {
 		g.RecordTypeUse(field.GetTypeName())
 	}
 	if len(message.ExtensionRange) > 0 {
-		g.P("XXX_extensions\t\tmap[int32]", g.Pkg["proto"], ".Extension `json:\"-\"`")
+		g.P("XXX_extensions\t\tmap[int32]", g.Pkg["proto"], ".Extension `json:\"-\" bson:\"-\"`")
 	}
 	if !message.proto3() {
-		g.P("XXX_unrecognized\t[]byte `json:\"-\"`")
+		g.P("XXX_unrecognized\t[]byte `json:\"-\" bson:\"-\"`")
 	}
 	g.Out()
 	g.P("}")
