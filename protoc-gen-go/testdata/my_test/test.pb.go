@@ -20,7 +20,7 @@ It has these top-level messages:
 */
 package my_test
 
-import proto "github.com/golang/protobuf/proto"
+import proto "github.com/linkedin-inc/protobuf/proto"
 import math "math"
 
 // discarding unused import multitest2 "multi"
